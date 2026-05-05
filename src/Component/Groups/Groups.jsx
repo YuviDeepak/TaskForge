@@ -16,7 +16,6 @@ const Groups = () => {
 
   const userObj = JSON.parse(localStorage.getItem("user"))
 
-  // ✅ FETCH GROUPS
   const fetchGroups = async () => {
     try {
       const res = await fetch(
@@ -39,7 +38,6 @@ const Groups = () => {
     fetchGroups()
   }, [])
 
-  // ✅ CREATE GROUP
   const addNewGroupFun = async (e) => {
     e.preventDefault()
 
@@ -78,7 +76,6 @@ const Groups = () => {
     }
   }
 
-  // ✅ JOIN GROUP
   const joinNewGroupFun = async (e) => {
     e.preventDefault()
 
@@ -119,7 +116,6 @@ const Groups = () => {
   return (
     <div className="groupContainer">
 
-      {/* 🔍 SEARCH */}
       <form className='groupSearchForm'>
         <input type="text" placeholder="Search groups..." />
         <button type="submit">
@@ -127,7 +123,6 @@ const Groups = () => {
         </button>
       </form>
 
-      {/* 👑 ADMIN */}
       {
         userObj?.role === "admin" && (
           <div className="addGroup">
@@ -146,7 +141,6 @@ const Groups = () => {
         )
       }
 
-      {/* 👤 USER */}
       {
         userObj?.role === "user" && (
           <div className="addGroup">
@@ -165,7 +159,6 @@ const Groups = () => {
         )
       }
 
-      {/* 📦 GROUP DISPLAY */}
       <div className="groupsBox">
         <div className="title">
           <p>Manage Groups</p>
@@ -173,24 +166,19 @@ const Groups = () => {
 
         <div className="gp">
 
-          {/* 👑 CREATED GROUPS */}
           {
             userObj?.role === "admin" && (
               <>
-                {/* <h3>Created Groups</h3> */}
 
                 {
                   createdGroups.length > 0 ? (
                     createdGroups.map((grp) => (
                       <div key={grp._id} className="grpCard">
-                        {/* <div className="grpLogo">
-                          <img src="https://via.placeholder.com/50" alt="" />
-                        </div> */}
+                       
 
                         <div className="grpName">
                           <h3>{grp.groupName}</h3>
                         </div>
-                        {/* <p>ID: {grp._id}</p> */}
                         <div className="grpView">
                           <button onClick={() => setSelectedGroup(grp)}><i className="fa-solid fa-eye"></i></button>
                         </div>
@@ -205,11 +193,9 @@ const Groups = () => {
             )
           }
 
-          {/* 👤 JOINED GROUPS */}
           {
             userObj?.role === "user" && (
               <>
-                {/* <h3>Joined Groups</h3> */}
 
                 {
                   joinedGroups.length > 0 ? (

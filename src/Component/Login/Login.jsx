@@ -54,7 +54,6 @@ const Login = ({ setUserObj }) => {
                     <h2>Login</h2>
                 </div>
 
-                {/* ROLE */}
                 <div className="tag">
                     <label>Role :</label>
                     <select name="role" required>
@@ -64,24 +63,23 @@ const Login = ({ setUserObj }) => {
                     </select>
                 </div>
 
-                {/* EMAIL */}
                 <div className="tag">
                     <label>Email :</label>
                     <input required type="email" name='email' />
                 </div>
 
-                {/* PASSWORD */}
+               
                 <div className="tag">
                     <label>Password :</label>
                     <input required type="password" name='password' />
                 </div>
 
-                {/* BUTTON */}
+              
                 <div className="tag btn">
                     <button type="submit">Login</button>
                 </div>
 
-                {/* LINKS */}
+               
                 <div className="tag btn">
                     <Link className='link' to='/register'>Create Account</Link>
                 </div>

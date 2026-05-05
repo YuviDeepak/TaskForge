@@ -9,7 +9,7 @@ import './Component/Panel/Panel.css'
 
 
 
-// import pages
+
 import Groups from './Component/Groups/Groups'
 import Tasks from './Component/Tasks/Tasks'
 import TaskPop from './Component/TaskPop/TaskPop'
@@ -24,7 +24,6 @@ function App() {
   return (
     <Routes>
 
-      {/* Auth Routes */}
       <Route 
         path='/' 
         element={
@@ -47,7 +46,6 @@ function App() {
         } 
       />
 
-      {/* Panel with Nested Routes */}
       <Route 
         path='/panel' 
         element={
@@ -59,10 +57,9 @@ function App() {
           />
         }
       >
-        {/* Default page */}
+       
         <Route index element={<h2>Dashboard</h2>} />
 
-        {/* Sub routes */}
         <Route path='groups' element={<Groups />} />
         <Route path='tasks' element={<Tasks />} />
         <Route path='users' element={<UserComp />} />

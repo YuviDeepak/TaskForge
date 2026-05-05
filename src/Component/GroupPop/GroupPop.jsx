@@ -21,8 +21,6 @@ const GroupPop = ({ selectedGroup, setSelectedGroup }) => {
         return
       }
 
-      // ✅ MATCH BACKEND RESPONSE
-      // ✅ SAFE
       setPopMembers(data?.response?.group?.members || [])
       setPopTasks(data?.response?.tasks || [])
 
@@ -38,7 +36,6 @@ const GroupPop = ({ selectedGroup, setSelectedGroup }) => {
   return (
     <div className="grppopContainer">
 
-      {/* HEADER */}
       <header className="grpHeader">
         <h2>{selectedGroup.groupName}</h2>
         <button onClick={() => setSelectedGroup(null)}>✖</button>
@@ -46,7 +43,6 @@ const GroupPop = ({ selectedGroup, setSelectedGroup }) => {
 
       <main>
 
-        {/* MEMBERS */}
         <section>
           <h3>Members</h3>
           <div className="totalMembers">
@@ -64,7 +60,7 @@ const GroupPop = ({ selectedGroup, setSelectedGroup }) => {
           </div>
         </section>
 
-        {/* TASKS */}
+  
         <section>
           <h3>Tasks</h3>
           <div className="totalTasks">

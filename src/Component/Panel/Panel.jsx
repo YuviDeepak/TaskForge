@@ -9,14 +9,13 @@ const Panel = ({ userObj, setUserObj }) => {
     const navigate = useNavigate()
     const location = useLocation()
 
-    // ✅ PROTECT PANEL (no login → redirect)
     useEffect(() => {
         if (!userObj) {
             navigate("/")
         }
     }, [userObj])
 
-    // ✅ ROLE BASED MENU
+   
     const menu = [
         {
             title: "Dashboard",
@@ -58,14 +57,14 @@ const Panel = ({ userObj, setUserObj }) => {
         }
     ]
 
-    // ✅ LOGOUT
+   
     const handleLogout = () => {
         setUserObj(null)
         localStorage.removeItem("user")   // important
         navigate("/")
     }
 
-    // ✅ CURRENT TITLE
+   
     const currentTitle =
         menu.find(item => location.pathname.startsWith(item.path))?.title
         || "Dashboard"
@@ -73,10 +72,10 @@ const Panel = ({ userObj, setUserObj }) => {
     return (
         <div className="containerPanel">
 
-            {/* SIDEBAR */}
+           
             <aside className={isOpen ? "" : "close"}>
 
-                {/* HEADER */}
+                
                 <header className='cmp header'>
                     <div className="accbox">
                         <span className='logopanel'>
@@ -98,7 +97,7 @@ const Panel = ({ userObj, setUserObj }) => {
                     </button>
                 </header>
 
-                {/* MENU */}
+              
                 <main className='cmp'>
                     <div className="mainBox">
 
@@ -124,7 +123,7 @@ const Panel = ({ userObj, setUserObj }) => {
                     </div>
                 </main>
 
-                {/* FOOTER */}
+               
                 {isOpen && (
                     <footer className='cmp'>
                         <p>Manage your group easily</p>
@@ -139,7 +138,7 @@ const Panel = ({ userObj, setUserObj }) => {
 
             </aside>
 
-            {/* MAIN CONTENT */}
+         
             <section>
 
                 <header className="panelHeader">
@@ -147,7 +146,7 @@ const Panel = ({ userObj, setUserObj }) => {
                 </header>
 
                 <main className="panelMain">
-                    {/* ROUTES RENDER HERE */}
+                    
                     <Outlet />
                 </main>
 

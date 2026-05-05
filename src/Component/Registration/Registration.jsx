@@ -21,14 +21,14 @@ const Registration = () => {
         const password = formRef.current.password.value
         const confirmPassword = formRef.current.confirmPassword.value
 
-        // 🔐 Password check
+       
         if (password !== confirmPassword) {
             setErrorMsg("Password doesn't match")
             setLoading(false)
             return
         }
 
-        // 📦 Prepare data
+      
         const userData = {
             name,
             email,
@@ -48,14 +48,14 @@ const Registration = () => {
 
             const data = await res.json()
 
-            // ❌ backend error handling
+            
             if (!res.ok) {
                 throw new Error(data.message)
             }
 
             alert(data.message)
 
-            // reset form
+            
             formRef.current.reset()
             setErrorMsg("")
             navigate("/")
