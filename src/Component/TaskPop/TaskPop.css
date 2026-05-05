@@ -1,0 +1,118 @@
+/* Main popup container */
+.pop {
+    padding: 20px;
+}
+
+/* Header */
+.pop .taskName {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.taskName h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.taskName button {
+    border: none;
+    background: #eee;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Form */
+.grbform {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Group container */
+.grbContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Group card */
+.gbrCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+    height: 55px;
+    padding: 0 15px;
+    border-radius: 12px;
+    background: #f8f9fb;
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.gbrCard:hover {
+    background: #eef2ff;
+    border-color: #6366f1;
+    transform: translateY(-2px);
+}
+
+/* Label */
+.gbrName label {
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Checkbox */
+.grbView input {
+    width: 18px;
+    height: 18px;
+    accent-color: #6366f1;
+    cursor: pointer;
+}
+
+/* Submit button container */
+.submitBtn {
+    display: flex;
+    justify-content: center;
+}
+
+/* Button */
+.submitBtn button {
+    width: 220px;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.submitBtn button:hover {
+    opacity: 0.9;
+}
+
+.user{
+    border:  1px solid red;
+    flex-direction: column;
+    display: flex;
+    gap: 30px;
+}
+
+.confirmation{
+    border: 1px solid red;
+    padding: 5px;
+}
+
+.confirmation input{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: ;
+}

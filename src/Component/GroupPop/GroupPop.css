@@ -1,0 +1,94 @@
+/* Container (centered popup) */
+.grppopContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-height: 80vh;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+/* Header */
+.grpHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.grpHeader h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.grpHeader button {
+  border: none;
+  background: #eee;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.grpHeader button:hover {
+  background: #ddd;
+}
+
+/* Sections */
+main section {
+  margin-top: 15px;
+}
+
+main h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  /* color: #444; */
+}
+
+/* Members & Tasks container */
+.totalMembers,
+.totalTasks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Member card */
+.eachmem {
+  background: #f1f5f9;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.eachmem:hover {
+  background: #e2e8f0;
+}
+
+/* Task card */
+.eachTask {
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.eachTask:hover {
+  background: #eef2ff;
+  border-color: #6366f1;
+}
+
+/* Empty text */
+main p {
+  color: #888;
+  font-size: 14px;
+}

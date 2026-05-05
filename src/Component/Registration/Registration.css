@@ -1,0 +1,127 @@
+:root {
+    --boxBackground: oklch(57.906% 0.27439 300.028);
+    --formBackground: oklch(78.801% 0.1303 302.403 / 0.6);
+    --formFontColor: #f1f5f9;
+    --formButtonBackground: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+/* Container */
+.registrationBox {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    background: var(--boxBackground);
+    color: var(--formFontColor);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Form Card */
+.registrationBox form {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 350px;
+    padding: 25px;
+    border-radius: 16px;
+    background: var(--formBackground);
+    backdrop-filter: blur(10px);
+}
+
+/* Input Group */
+.registrationBox form .tag {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.95rem;
+}
+
+/* Inputs */
+.registrationBox input,
+.registrationBox select {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--formFontColor);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.registrationBox select{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1); /* same as input */
+    color: var(--formFontColor);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    outline: none;
+    appearance: none; /* removes default white style */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    color: var(--boxBackground);
+
+}
+.registrationBox select {
+    /* darker than before */
+    color: white;
+}
+
+.registrationBox select option{
+    color:var(--boxBackground);
+
+}
+
+/* Focus Effect */
+.registrationBox input:focus,
+.registrationBox select:focus {
+    border: 1px solid #8b5cf6;
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+}
+
+/* Button */
+.registrationBox button {
+    padding: 0.7rem;
+    border-radius: 10px;
+    border: none;
+    color: var(--formFontColor);
+    background: var(--formButtonBackground);
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.registrationBox button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Links */
+.link {
+    color: var(--formFontColor);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.link:hover {
+    opacity: 0.85;
+}
+
+/* Error */
+.error {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 576px) {
+    .registrationBox form {
+        width: 300px;
+        padding: 20px;
+    }
+}
