@@ -49,7 +49,7 @@ aside .cmp {
     color: var(--brand-2);
     border-radius: 10px;
     padding: 7px;
-    
+
 }
 
 
@@ -148,7 +148,7 @@ aside main .mainBox ul li {
     transition: 0.2s ease;
     border-radius: 15px;
     cursor: pointer;
-   
+
 }
 
 aside main .mainBox ul li:hover {
@@ -157,18 +157,18 @@ aside main .mainBox ul li:hover {
     border-radius: 15px;
 }
 
-.logoutBtn{
+.logoutBtn {
     padding: 0.5rem 2rem;
     border: none;
     border-radius: 15px;
     transition: 0.2s;
 }
 
-.logoutBtn:hover{
+.logoutBtn:hover {
     background-color: rgba(255, 255, 255, 0.437);
 }
 
-.panelFooter{
+.panelFooter {
     display: grid;
     place-items: center;
 }
@@ -205,6 +205,7 @@ section header {
     justify-content: center;
     padding: 0 20px;
     background-color: #F3E8FF;
+    position: relative;
 }
 
 section footer {
@@ -218,10 +219,15 @@ section main {
     position: relative;
 }
 
-#tg{
+#tg {
     display: none;
 }
 
+.tgclass {
+    display: none;
+    position: absolute;
+    right: 10%;
+}
 
 
 @media screen and (max-width:576px) {
@@ -238,11 +244,15 @@ section main {
         transition: 0.2s;
     }
 
-    #tg:checked~aside{
-    transform: translateX(0%);
-}
+    #tg:checked~aside {
+        transform: translateX(0%);
+    }
 
-    section{
+    .tgclass {
+        display: block;
+    }
+
+    section {
         border-top-right-radius: 0px;
         border-bottom-right-radius: 0px;
     }
@@ -251,7 +261,7 @@ section main {
 @media screen and (min-width:576px) and (max-width:768px) {
     .containerPanel {
         padding: 0;
-        
+
     }
 
     aside {
@@ -259,7 +269,7 @@ section main {
         border-bottom-left-radius: 0px;
     }
 
-    section{
+    section {
         border-top-right-radius: 0px;
         border-bottom-right-radius: 0px;
     }

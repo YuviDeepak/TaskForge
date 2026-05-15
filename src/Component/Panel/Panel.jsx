@@ -166,7 +166,7 @@ const Panel = ({ userObj, setUserObj }) => {
 
                 <header className="panelHeader">
                     <h2>{currentTitle}</h2>
-                    <label htmlFor="tg">open</label>
+                    <label htmlFor="tg" className='tgclass'><i className="fa-solid fa-bars"></i></label>
                    
                 </header>
 
