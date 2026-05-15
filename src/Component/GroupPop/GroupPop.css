@@ -1,30 +1,37 @@
-/* Container (centered popup) */
+/* =========================
+   Container (centered popup)
+========================= */
 .grppopContainer {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
+  max-width: 90%;
   max-height: 80vh;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   padding: 20px;
   overflow-y: auto;
   z-index: 1000;
 }
 
-/* Header */
+/* =========================
+   Header
+========================= */
 .grpHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+  gap: 10px;
 }
 
 .grpHeader h2 {
   font-size: 20px;
   font-weight: 600;
+  word-break: break-word;
 }
 
 .grpHeader button {
@@ -34,13 +41,16 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
+  flex-shrink: 0;
 }
 
 .grpHeader button:hover {
   background: #ddd;
 }
 
-/* Sections */
+/* =========================
+   Sections
+========================= */
 main section {
   margin-top: 15px;
 }
@@ -48,10 +58,11 @@ main section {
 main h3 {
   margin-bottom: 10px;
   font-size: 16px;
-  /* color: #444; */
 }
 
-/* Members & Tasks container */
+/* =========================
+   Members & Tasks container
+========================= */
 .totalMembers,
 .totalTasks {
   display: flex;
@@ -59,20 +70,25 @@ main h3 {
   gap: 10px;
 }
 
-/* Member card */
+/* =========================
+   Member card
+========================= */
 .eachmem {
   background: #f1f5f9;
   padding: 8px 12px;
   border-radius: 20px;
   font-size: 14px;
   transition: 0.2s;
+  word-break: break-word;
 }
 
 .eachmem:hover {
   background: #e2e8f0;
 }
 
-/* Task card */
+/* =========================
+   Task card
+========================= */
 .eachTask {
   width: 100%;
   background: #f8fafc;
@@ -80,6 +96,7 @@ main h3 {
   padding: 10px;
   border-radius: 8px;
   transition: 0.2s;
+  word-break: break-word;
 }
 
 .eachTask:hover {
@@ -87,8 +104,89 @@ main h3 {
   border-color: #6366f1;
 }
 
-/* Empty text */
+/* =========================
+   Empty text
+========================= */
 main p {
   color: #888;
   font-size: 14px;
+}
+
+/* =========================
+   Tablet Responsive
+========================= */
+@media (max-width: 768px) {
+  .grppopContainer {
+    width: 90%;
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .grpHeader h2 {
+    font-size: 18px;
+  }
+
+  main h3 {
+    font-size: 15px;
+  }
+
+  .eachmem {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+
+  .eachTask {
+    padding: 9px;
+  }
+}
+
+/* =========================
+   Mobile Responsive
+========================= */
+@media (max-width: 480px) {
+  .grppopContainer {
+    width: 95%;
+    max-height: 90vh;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .grpHeader {
+    align-items: flex-start;
+  }
+
+  .grpHeader h2 {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .grpHeader button {
+    padding: 5px 8px;
+    font-size: 14px;
+  }
+
+  main h3 {
+    font-size: 14px;
+  }
+
+  .totalMembers,
+  .totalTasks {
+    gap: 8px;
+  }
+
+  .eachmem {
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .eachTask {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  main p {
+    font-size: 13px;
+  }
 }
