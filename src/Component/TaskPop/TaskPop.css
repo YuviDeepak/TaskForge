@@ -1,19 +1,27 @@
-/* Main popup container */
+/* =========================
+   Main popup container
+========================= */
 .pop {
     padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Header */
+/* =========================
+   Header
+========================= */
 .pop .taskName {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    gap: 10px;
 }
 
 .taskName h1 {
     font-size: 20px;
     font-weight: 600;
+    word-break: break-word;
 }
 
 .taskName button {
@@ -22,35 +30,48 @@
     padding: 6px 12px;
     border-radius: 6px;
     cursor: pointer;
+    flex-shrink: 0;
+    transition: 0.2s;
 }
 
-/* Form */
+.taskName button:hover {
+    background: #ddd;
+}
+
+/* =========================
+   Form
+========================= */
 .grbform {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-/* Group container */
+/* =========================
+   Group container
+========================= */
 .grbContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
 }
 
-/* Group card */
+/* =========================
+   Group card
+========================= */
 .gbrCard {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 240px;
-    height: 55px;
-    padding: 0 15px;
+    min-height: 55px;
+    padding: 12px 15px;
     border-radius: 12px;
     background: #f8f9fb;
     border: 1px solid #e5e7eb;
     transition: all 0.2s ease;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 /* Hover effect */
@@ -60,14 +81,23 @@
     transform: translateY(-2px);
 }
 
-/* Label */
+/* =========================
+   Label
+========================= */
+.gbrName {
+    flex: 1;
+}
+
 .gbrName label {
     font-size: 15px;
     font-weight: 500;
     cursor: pointer;
+    word-break: break-word;
 }
 
-/* Checkbox */
+/* =========================
+   Checkbox
+========================= */
 .grbView input {
     width: 18px;
     height: 18px;
@@ -75,13 +105,17 @@
     cursor: pointer;
 }
 
-/* Submit button container */
+/* =========================
+   Submit button container
+========================= */
 .submitBtn {
     display: flex;
     justify-content: center;
 }
 
-/* Button */
+/* =========================
+   Button
+========================= */
 .submitBtn button {
     width: 220px;
     height: 45px;
@@ -98,21 +132,136 @@
     opacity: 0.9;
 }
 
-.user{
-    border:  1px solid red;
+/* =========================
+   User Section
+========================= */
+.user {
+    border: 1px solid red;
     flex-direction: column;
     display: flex;
     gap: 30px;
+    padding: 15px;
+    border-radius: 10px;
 }
 
-.confirmation{
+/* =========================
+   Confirmation
+========================= */
+.confirmation {
     border: 1px solid red;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 8px;
 }
 
-.confirmation input{
+.confirmation input {
     width: 100%;
-    height: 30px;
+    height: 38px;
     border-radius: 5px;
-    border: ;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.confirmation input:focus {
+    border-color: #6366f1;
+}
+
+/* =========================
+   Tablet Responsive
+========================= */
+@media (max-width: 768px) {
+
+    .pop {
+        padding: 18px;
+    }
+
+    .taskName h1 {
+        font-size: 18px;
+    }
+
+    .grbContainer {
+        justify-content: center;
+    }
+
+    .gbrCard {
+        width: 100%;
+    }
+
+    .submitBtn button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .user {
+        gap: 20px;
+    }
+}
+
+/* =========================
+   Mobile Responsive
+========================= */
+@media (max-width: 480px) {
+
+    .pop {
+        padding: 15px;
+    }
+
+    .pop .taskName {
+        align-items: flex-start;
+    }
+
+    .taskName h1 {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    .taskName button {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .grbform {
+        gap: 20px;
+    }
+
+    .grbContainer {
+        gap: 10px;
+    }
+
+    .gbrCard {
+        width: 100%;
+        min-height: auto;
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .gbrName label {
+        font-size: 14px;
+    }
+
+    .grbView input {
+        width: 16px;
+        height: 16px;
+    }
+
+    .submitBtn button {
+        width: 100%;
+        height: 42px;
+        font-size: 15px;
+    }
+
+    .user {
+        padding: 12px;
+        gap: 15px;
+    }
+
+    .confirmation {
+        padding: 8px;
+    }
+
+    .confirmation input {
+        height: 35px;
+        font-size: 14px;
+    }
 }
