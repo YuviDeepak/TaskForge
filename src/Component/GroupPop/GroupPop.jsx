@@ -10,7 +10,7 @@ const GroupPop = ({ selectedGroup, setSelectedGroup }) => {
   const fetchAll = async () => {
     try {
       const res = await fetch(
-        `http://localhost:7000/group/eachGroup/${selectedGroup._id}`
+        `https://taskforge-backend-hgwj.onrender.com/group/eachGroup/${selectedGroup._id}`
       )
 
       const data = await res.json()

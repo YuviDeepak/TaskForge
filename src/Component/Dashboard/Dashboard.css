@@ -1,0 +1,206 @@
+.dashboard{
+    width:100%;
+    min-height:100vh;
+    padding:30px;
+    /* background:#f5f7ff; */
+}
+
+.topSection{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.topSection h1{
+    font-size:38px;
+    font-weight:700;
+    color:#1f1f35;
+}
+
+.topSection p{
+    margin-top:8px;
+    color:#6f6f8a;
+    font-size:15px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:22px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    transition:0.3s;
+    border:1px solid #ececf3;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.cardTop{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.cardTop span{
+    font-size:15px;
+    color:#6d6d85;
+    font-weight:500;
+}
+
+.cardTop i{
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    font-size:18px;
+    background:
+    linear-gradient(
+        135deg,
+        oklch(57.906% 0.27439 300.028),
+        oklch(60.51% 0.23683 298.018)
+    );
+    color:white;
+}
+
+.card h2{
+    font-size:38px;
+    color:#1d1d35;
+    font-weight:700;
+}
+
+.taskHighlightSection{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.highlightCard{
+    padding:30px;
+    border-radius:24px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.07);
+}
+
+.mostCard{
+    background:
+    linear-gradient(
+        135deg,
+        oklch(57.906% 0.27439 300.028),
+        oklch(60.51% 0.23683 298.018)
+    );
+    /* color:white; */
+    background:white;
+}
+
+.leastCard{
+    background:white;
+    border:1px solid #ececf3;
+}
+
+.mostCard h2,.leastCard h2{
+    color:#1d1d35;
+}
+
+.mostCard span,
+.mostCard .highlightTitle{
+    color:#6f6f8a;
+}
+
+.leastCard span,
+.leastCard .highlightTitle{
+    color:#6f6f8a;
+}
+
+.mostCard h3{
+    color:
+    oklch(57.906% 0.27439 300.028);
+}
+
+.leastCard h3{
+    color:
+    oklch(57.906% 0.27439 300.028);
+}
+
+.highlightTitle{
+    font-size:14px;
+    margin-bottom:14px;
+    opacity:0.9;
+    font-weight:500;
+}
+
+.highlightCard h2{
+    font-size:30px;
+    margin-bottom:25px;
+    font-weight:700;
+}
+
+.highlightCard span{
+    font-size:14px;
+    opacity:0.9;
+}
+
+.highlightCard h3{
+    margin-top:8px;
+    font-size:24px;
+    font-weight:700;
+}
+
+.chartCard{
+    background:white;
+    padding:25px;
+    border-radius:24px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    border:1px solid #ececf3;
+}
+
+.chartHeader{
+    margin-bottom:20px;
+}
+
+.chartHeader h2{
+    font-size:24px;
+    color:#1d1d35;
+}
+
+@media(max-width:768px){
+
+    .dashboard{
+        padding:18px;
+    }
+
+    .topSection{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .topSection h1{
+        font-size:30px;
+    }
+
+    .card h2{
+        font-size:30px;
+    }
+
+    .highlightCard h2{
+        font-size:24px;
+    }
+
+    .highlightCard h3{
+        font-size:20px;
+    }
+}

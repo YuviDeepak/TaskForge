@@ -11,7 +11,7 @@ const TaskPop = ({ selectedTask,fetchTask, setSelectedTask }) => {
 
   let fetchGroups = async () => {
     try {
-      const res = await fetch(`http://localhost:7000/group/user/${userObj._id}`)
+      const res = await fetch(`https://taskforge-backend-hgwj.onrender.com/group/user/${userObj._id}`)
       const data = await res.json()
       if (!res.ok) {
         alert("Fetching unsuccessfull")
@@ -28,7 +28,7 @@ useEffect(() => {
   if (isAdmin) {
     fetchGroups()
   }
-}, [isAdmin])
+}, [isAdmin,selectedTask])
 
   let handleChange = (e) => {
     let { checked, value } = e.target
@@ -51,7 +51,7 @@ useEffect(() => {
         groups: [...selectedTask.groups, ...assignedGroup],
         completedBy: selectedTask.completedBy
       }
-      let res = await fetch(`http://localhost:7000/tasks/${selectedTask._id}`, {
+      let res = await fetch(`https://taskforge-backend-hgwj.onrender.com/tasks/${selectedTask._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
@@ -85,7 +85,7 @@ useEffect(() => {
     e.preventDefault()
     try {
         let res = await fetch(
-            `http://localhost:7000/tasks/usercompletion/${selectedTask._id}`,
+            `https://taskforge-backend-hgwj.onrender.com/tasks/usercompletion/${selectedTask._id}`,
             {
                 method: "PUT",
                 headers: {

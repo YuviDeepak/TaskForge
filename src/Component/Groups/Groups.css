@@ -28,7 +28,6 @@
     font-size: 0.95rem;
     outline: none;
 
-    /* 🔥 gradient border trick */
     background:
         linear-gradient(white, white) padding-box,
         linear-gradient(135deg, var(--brand), var(--brand-2)) border-box;
@@ -86,7 +85,9 @@
     background: #f9fafb;
     flex-wrap: wrap;
 }
-
+.deepp{
+    flex-wrap: wrap;
+}
 /* Label */
 .groupContainer .addGroup .addGroupLabel {
     display: flex;

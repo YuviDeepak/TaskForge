@@ -20,7 +20,7 @@ const Tasks = ({ }) => {
 
     let fetchTask = async () => {
         try {
-            const res = await fetch(`http://localhost:7000/tasks/user/${userObj._id}`)
+            const res = await fetch(`https://taskforge-backend-hgwj.onrender.com/tasks/user/${userObj._id}`)
 
             const data = await res.json()
 
@@ -54,7 +54,7 @@ const Tasks = ({ }) => {
         }
 
         try {
-            const res = await fetch("http://localhost:7000/tasks", {
+            const res = await fetch("https://taskforge-backend-hgwj.onrender.com/tasks", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -99,7 +99,7 @@ const Tasks = ({ }) => {
 
                             {
                                 addTask && (
-                                    <form ref={formRef} onSubmit={addTaskfun}>
+                                    <form className='deepp' ref={formRef} onSubmit={addTaskfun}>
                                         <input type="text" name='name' />
                                         <input type="text" name='description' />
                                         <button>Create</button>

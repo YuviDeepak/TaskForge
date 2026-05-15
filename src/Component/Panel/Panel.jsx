@@ -15,7 +15,6 @@ const Panel = ({ userObj, setUserObj }) => {
         }
     }, [userObj])
 
-   
     const menu = [
         {
             title: "Dashboard",
@@ -57,26 +56,35 @@ const Panel = ({ userObj, setUserObj }) => {
         }
     ]
 
-   
     const handleLogout = () => {
         setUserObj(null)
-        localStorage.removeItem("user")   // important
+        localStorage.removeItem("user")
         navigate("/")
     }
 
-   
-    const currentTitle =
-        menu.find(item => location.pathname.startsWith(item.path))?.title
-        || "Dashboard"
+    // Dynamic section title
+    const currentTitle = menu.find(item => {
+
+        // exact match for dashboard only
+        if (item.path === "/panel") {
+            return location.pathname === "/panel"
+        }
+
+        // partial match for nested routes
+        return location.pathname.startsWith(item.path)
+
+    })?.title || "Dashboard"
 
     return (
         <div className="containerPanel">
 
-           
+            {/* Sidebar */}
+             <input type="checkbox" name="tg" id="tg" />
             <aside className={isOpen ? "" : "close"}>
 
-                
+                {/* Header */}
                 <header className='cmp header'>
+
                     <div className="accbox">
                         <span className='logopanel'>
                             <i className="fa-solid fa-user"></i>
@@ -95,63 +103,79 @@ const Panel = ({ userObj, setUserObj }) => {
                     >
                         <i className="fa-solid fa-arrow-right-arrow-left"></i>
                     </button>
+
                 </header>
 
-              
+                {/* Menu */}
                 <main className='cmp'>
+
                     <div className="mainBox">
 
                         {isOpen && <h3>Menu</h3>}
 
                         <ul>
-                            {menu.map((item) => (
-                                <li
-                                    key={item.title}
-                                    className={
-                                        location.pathname.startsWith(item.path)
-                                            ? "active"
-                                            : ""
-                                    }
-                                    onClick={() => navigate(item.path)}
-                                >
-                                    <i className={item.icon}></i>
-                                    {isOpen && <span>{item.title}</span>}
-                                </li>
-                            ))}
+
+                            {menu.map((item) => {
+
+                                const isActive =
+                                    item.path === "/panel"
+                                        ? location.pathname === "/panel"
+                                        : location.pathname.startsWith(item.path)
+
+                                return (
+                                    <li
+                                        key={item.title}
+                                        className={isActive ? "active" : ""}
+                                        onClick={() => navigate(item.path)}
+                                    >
+                                        <i className={item.icon}></i>
+
+                                        {isOpen && (
+                                            <span>{item.title}</span>
+                                        )}
+                                    </li>
+                                )
+                            })}
+
                         </ul>
 
                     </div>
+
                 </main>
 
-               
+                {/* Footer */}
                 {isOpen && (
                     <footer className='cmp'>
-                        <p>Manage your group easily</p>
+
+                        {/* <p>Manage your group easily</p> */}
+
                         <button
                             onClick={handleLogout}
                             className="logoutBtn"
                         >
                             Logout
                         </button>
+
                     </footer>
                 )}
 
             </aside>
-
-         
+                
+            {/* Main Section */}
             <section>
 
                 <header className="panelHeader">
                     <h2>{currentTitle}</h2>
+                    <label htmlFor="tg">open</label>
+                   
                 </header>
 
                 <main className="panelMain">
-                    
                     <Outlet />
                 </main>
 
                 <footer className="panelFooter">
-                    <p>© 2026 Your App</p>
+                    <p>© Taskforge</p>
                 </footer>
 
             </section>

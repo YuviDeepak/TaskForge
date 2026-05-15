@@ -15,6 +15,7 @@ import Tasks from './Component/Tasks/Tasks'
 import TaskPop from './Component/TaskPop/TaskPop'
 import UserComp from './Component/UserComp/UserComp'
 import LeaderBoard from './Component/LeaderBoard/LeaderBoard'
+import Dashboard from './Component/Dashboard/Dashboard'
 
 function App() {
 
@@ -58,7 +59,7 @@ function App() {
         }
       >
        
-        <Route index element={<h2>Dashboard</h2>} />
+        <Route index element={<Dashboard/>} />
 
         <Route path='groups' element={<Groups />} />
         <Route path='tasks' element={<Tasks />} />
@@ -69,6 +70,8 @@ function App() {
       </Route>
 
     </Routes>
+
+    
   )
 }
 

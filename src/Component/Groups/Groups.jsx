@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import './Groups.css'
 import GroupPop from '../GroupPop/GroupPop'
 import '../GroupPop/GroupPop.css'
+import Loader from '../Loader/Loader'
 
 const Groups = () => {
   const [add, isAdd] = useState(false)
@@ -19,7 +20,7 @@ const Groups = () => {
   const fetchGroups = async () => {
     try {
       const res = await fetch(
-        `http://localhost:7000/group/user/${userObj._id}`
+        `https://taskforge-backend-hgwj.onrender.com/group/user/${userObj._id}`
       )
 
       const data = await res.json()
@@ -55,7 +56,7 @@ const Groups = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:7000/group", {
+      const res = await fetch("https://taskforge-backend-hgwj.onrender.com/group", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -88,7 +89,7 @@ const Groups = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:7000/group/join/${groupId}`,
+        `https://taskforge-backend-hgwj.onrender.com/group/join/${groupId}`,
         {
           method: "PUT",
           headers: {
@@ -132,7 +133,7 @@ const Groups = () => {
             </div>
 
             {add && (
-              <form ref={formRef1} onSubmit={addNewGroupFun}>
+              <form className='deepp' ref={formRef1} onSubmit={addNewGroupFun}>
                 <input type="text" name='groupName' placeholder="Enter group name" />
                 <button type="submit">Add</button>
               </form>
@@ -226,6 +227,8 @@ const Groups = () => {
           </div>
         )
       }
+
+      {/* <Loader/> */}
     </div>
   )
 }
